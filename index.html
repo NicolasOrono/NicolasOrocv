@@ -17,8 +17,34 @@
         <!-- template de  CSS (Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    <script>
+        // Función para mostrar el mensaje de bienvenida//
+        function mostrarMensajeDeBienvenida() {
+            alert("¡Bienvenido a Mi CV Vitae! Realizado por Nicolás Oroño.");
+        }
+
+        // Llama a la función al cargar la página//
+        window.addEventListener('load', mostrarMensajeDeBienvenida);
+
+        //---Función para contador de visitas---//
+        function incrementarContador() {
+            if (localStorage.getItem('visitCount')) {
+                var count = parseInt(localStorage.getItem('visitCount'));
+                count++;
+                localStorage.setItem('visitCount', count);
+                document.getElementById('visitCounter').textContent = 'Visitas: ' + count;
+            } else {
+                localStorage.setItem('visitCount', 1);
+                document.getElementById('visitCounter').textContent = 'Visitas: 1';
+            }
+        }
+        window.addEventListener('load', incrementarContador);   
+    </script>
+</head>
+<body class="d-flex flex-column h-100">
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
+            
             <!--Navegador-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
@@ -75,9 +101,9 @@
                                 <p class="lead fw-light mb-4">Mi nombre es Nicolás Oroño, tengo 21 años y soy estudiante de sistemas en la Universidad Argentina de la Empresa (UADE).</p>
                                 <p class="text-muted">Actualmente estoy trabajando como digitalizador y data entry en una empresa llamada Vivatia. Más adelante tengo pensado trabajar de algo relacionado a mis gustos informáticos, realicé este sitio web para que las personas o empresas que tengan propuestas laborales me puedan contactar más facilmente.</p>
                                 <div class="d-flex justify-content-center fs-2 gap-4">
-                                    <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a>
-                                    <a class="text-gradient" href="#!"><i class="bi bi-linkedin"></i></a>
-                                    <a class="text-gradient" href="#!"><i class="bi bi-github"></i></a>
+                                    <a class="text-gradient" href="https://twitter.com/nico_ezequielo"><i class="bi bi-twitter"></i></a>
+                                     <a class="text-gradient" href="https://www.linkedin.com/in/nico-oroño/"><i class="bi bi-linkedin"></i></a>
+                                    <a class="text-gradient" href="https://github.com/NicolasOrono"><i class="bi bi-github"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -91,18 +117,22 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">Copyright &copy; CV VIATE NICO OROÑO 2023</div></div>
                     <div class="col-auto">
-                        <a class="small" href="#!">Privacidad</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Términos</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contacto</a>
-                    </div>
+                    <class="bg-white py-4 mt-auto">
+                    <div class="container px-5">
+                    <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                    <div class="small m-0" id="visitCounter">Visitas a la web: 0 </div>
+                </div>
+                <div class="col-auto">
+                    <a class="small" href="">Privacidad</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="">Términos</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="contact.html">Contacto</a>
                 </div>
             </div>
-        </footer>
+        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
     </body>
 </html>
